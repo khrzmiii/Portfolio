@@ -163,9 +163,10 @@
                             </div>
 
                             <!-- Slide 1: Personal Portrait -->
-                            <div class="hero-slide absolute inset-0 transition-opacity duration-300 opacity-15">
+                            <!-- DITUKAR opacity-15 kepada opacity-100 dan kurangkan gelap gradient -->
+                            <div class="hero-slide absolute inset-0 transition-opacity duration-300 opacity-100">
                                 <img src="profil.jpg" alt="Ahmad Khuarizmi" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
                                 <div class="absolute bottom-4 left-4 right-4 z-20">
                                     <span class="px-2.5 py-1 rounded-md bg-emerald-600 text-white font-bold text-[10px] uppercase tracking-wider">Software Engineer</span>
                                     <h4 class="text-white font-bold text-base mt-1.5">Ahmad Khuarizmi bin Abdul Gani</h4>
@@ -175,7 +176,7 @@
                             <!-- Slide 2: Military Uniform / ROTU Photo -->
                             <div class="hero-slide absolute inset-0 transition-opacity duration-300 opacity-0 pointer-events-none">
                                 <img src="uniform.jpg" alt="Military Uniform" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
                                 <div class="absolute bottom-4 left-4 right-4 z-20">
                                     <span class="px-2.5 py-1 rounded-md bg-emerald-600 text-white font-bold text-[10px] uppercase tracking-wider">Leftenan Muda</span>
                                     <h4 class="text-white font-bold text-base mt-1.5">Rejimen Askar Wataniah</h4>
@@ -535,7 +536,8 @@
         function renderHeroSlide(idx) {
             heroSlides.forEach((slide, i) => {
                 if (i === idx) {
-                    slide.classList.remove('opacity-0', 'pointer-events-none');
+                    // DITUKAR: pastikan opacity-15 dibuang sekiranya ada
+                    slide.classList.remove('opacity-0', 'opacity-15', 'pointer-events-none');
                     slide.classList.add('opacity-100');
                 } else {
                     slide.classList.remove('opacity-100');
